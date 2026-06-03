@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeTask - Premium To-Do App</title>
+    <meta name="description" content="LifeTask is a premium, responsive To-Do application built to organize daily goals with categories, priorities, due dates, progress tracking, and search filtering.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>LifeTask</h1>
+            <p>Manage your daily goals</p>
+        </header>
+
+        <!-- Progress Tracker Section -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Completed Tasks</span>
+                <span id="progressPercentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Task Form Section -->
+        <div class="input-container">
+            <div class="input-row main-row">
+                <input type="text" id="taskInput" placeholder="What do you need to do?">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+            <div class="input-row options-row">
+                <div class="option-field">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="option-field">
+                    <label for="taskCategory">Category</label>
+                    <select id="taskCategory">
+                        <option value="general" selected>General</option>
+                        <option value="study">🎓 Study</option>
+                        <option value="work">💼 Work</option>
+                        <option value="personal">🏠 Personal</option>
+                        <option value="health">🏃‍♂️ Health</option>
+                    </select>
+                </div>
+                <div class="option-field">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+            </div>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="filter-search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+            </div>
+            <div class="filter-sort-row">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="active">Active</button>
+                    <button class="filter-tab" data-filter="completed">Completed</button>
+                </div>
+                <button id="clearCompletedBtn" class="clear-btn">Clear Completed</button>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <p>Tasks: <span id="totalTasks">0</span> | Completed: <span id="completedTasks">0</span></p>
+        </div>
+
+        <ul id="taskList">
+            <!-- Tasks will be added here via JavaScript -->
+        </ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
